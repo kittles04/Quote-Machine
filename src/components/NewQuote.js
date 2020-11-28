@@ -1,23 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
-import QuoteBox from "./QuoteBox";
-import { v4 as uuidv4 } from "uuid";
 
-const NewQuote = ({ quotes }) => {
+const NewQuote = ({ newQuote }) => {
   //receive quotes from QuoteBox, map through and display in this component
-  return quotes.length ? (
-    <div className="text">
-      <ul>
-        {quotes.map((quote) => {
-          return <li key={uuidv4()}>{quote.name}</li>;
-        })}
-      </ul>
+  return (
+    <div className="quote-details">
+      <div className="card-content">
+        <blockquote id="text">{newQuote.quote}</blockquote>
+        <blockquote id="author">{newQuote.author}</blockquote>
+      </div>
     </div>
-  ) : (
-    <div className="empty"> No quotes, we have to find some : ) </div>
   );
 };
 
-NewQuote.propTypes = {};
+NewQuote.propTypes = {
+  newQuote: PropTypes.object,
+};
 
 export default NewQuote;

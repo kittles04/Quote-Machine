@@ -12,10 +12,12 @@ code {
     monospace;
 }
 
-#App{
+#App {
   margin: 20px auto;
   width: 90%;
   max-width: 700px;
 }
 
-
+#quote-box {
+  text-align: center;
+}
